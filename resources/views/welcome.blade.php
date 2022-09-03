@@ -79,7 +79,8 @@
                                         label</small>
                                 </div> --}}
                                 <div class="card-body">
-                                    <form>
+                                    <form method="POST" action="{{ route('order.store')}}">
+                                        @csrf
                                         <div class="row mb-3">
                                             <label class="col-sm-2 col-form-label" for="basic-default-name">Your
                                                 Name</label>
@@ -124,8 +125,8 @@
                                             <label class="col-sm-2 col-form-label" for="multicol-country">Cake
                                                 Size</label>
                                             <div class="col-sm-10">
-                                                <select id="multicol-country" class="select2 form-select"
-                                                    data-allow-clear="true">
+                                                <select id="multicol-country" name="cake_size"
+                                                    class="select2 form-select" data-allow-clear="true">
                                                     <option value=""> Please Select </option>
                                                     <option value="No Cake "> No Cake </option>
                                                     <option value="6” round - 12 servings "> 6” round - 12 servings
@@ -152,8 +153,8 @@
                                             <label class="col-sm-2 col-form-label"
                                                 for="multicol-country">Cupcakes</label>
                                             <div class="col-sm-10">
-                                                <select id="multicol-country" class="select2 form-select"
-                                                    data-allow-clear="true">
+                                                <select id="multicol-country" name="cupcakes"
+                                                    class="select2 form-select" data-allow-clear="true">
                                                     <option value=""> Please Select </option>
                                                     <option value="No Cupcakes "> No Cupcakes </option>
                                                     <option value="12 Cupcakes "> 12 Cupcakes </option>
@@ -171,8 +172,8 @@
                                             <label class="col-sm-2 col-form-label"
                                                 for="multicol-country">Flavour</label>
                                             <div class="col-sm-10">
-                                                <select id="multicol-country" class="select2 form-select"
-                                                    data-allow-clear="true">
+                                                <select id="multicol-country" name="flavour"
+                                                    class="select2 form-select" data-allow-clear="true">
                                                     <option value=""> Please Select </option>
                                                     <option value="Chocolate Cake "> Chocolate Cake </option>
                                                     <option value="Salted Caramel Cake "> Salted Caramel Cake </option>
@@ -204,8 +205,8 @@
                                             <label class="col-sm-2 col-form-label"
                                                 for="multicol-country">Filling</label>
                                             <div class="col-sm-10">
-                                                <select id="multicol-country" class="select2 form-select"
-                                                    data-allow-clear="true">
+                                                <select id="multicol-country" name="fillings"
+                                                    class="select2 form-select" data-allow-clear="true">
                                                     <<option value=""> Please Select </option>
                                                         <option value="Vanilla Buttercream "> Vanilla Buttercream
                                                         </option>
@@ -231,8 +232,8 @@
                                             <label class="col-sm-2 col-form-label" for="multicol-country">Cake
                                                 Toppers</label>
                                             <div class="col-sm-10">
-                                                <select id="multicol-country" class="select2 form-select"
-                                                    data-allow-clear="true">
+                                                <select id="multicol-country" name="toppings"
+                                                    class="select2 form-select" data-allow-clear="true">
                                                     <option value=""> Please Select </option>
                                                     <option value="No Toppers "> No Toppers </option>
                                                     <option value="Personalised from £5"> Personalised from £5
@@ -256,10 +257,11 @@
                                                 <div class="input-group input-group-merge">
                                                     <input type="text" id="basic-default-email"
                                                         class="form-control" placeholder="Cake Theme"
-                                                        aria-label="john.doe"
+                                                        aria-label="john.doe" name="theme"
                                                         aria-describedby="basic-default-email2" />
                                                 </div>
-                                                <div class="form-text">e.g. Funny, Hip, Futuristic, Outback, Movies, Cartoon
+                                                <div class="form-text">e.g. Funny, Hip, Futuristic, Outback, Movies,
+                                                    Cartoon
                                                 </div>
                                             </div>
                                         </div>
@@ -269,7 +271,7 @@
                                                 Food Allergies?</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="basic-default-name"
-                                                    placeholder="Allergies" />
+                                                    name="food_allergies" placeholder="Allergies" />
                                             </div>
                                         </div>
 
@@ -280,7 +282,7 @@
                                                 <div class="input-group input-group-merge">
                                                     <input type="text" id="basic-default-email"
                                                         class="form-control" placeholder="Delivery Or Collection"
-                                                        aria-label="john.doe"
+                                                        aria-label="john.doe" name="delivery"
                                                         aria-describedby="basic-default-email2" />
                                                 </div>
                                             </div>

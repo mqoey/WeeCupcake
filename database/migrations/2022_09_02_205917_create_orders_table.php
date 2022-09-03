@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('theme');
             $table->string('food_allergies');
             $table->string('delivery');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

@@ -36,7 +36,15 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+        $order = Order::create($request->all());
+        // redirect back to the form
+        if($order) {
+            return redirect()->back()->with('success', 'Order created successfully');
+        }
+        else {
+            return redirect()->back()->with('error', 'Order could not be created');
+        }
+
     }
 
     /**
